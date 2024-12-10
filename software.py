@@ -505,10 +505,10 @@ def configurar_canvas_movimentacao():
     mov_label_i = Label(canvas_movimentacao, text="Tempo Inicial", font=("Inter", fontsize14, "bold"), background="#E0E7EC", fg="#656565")
     mov_tempo_i = boxes.CustomSpinbox(
         canvas_movimentacao,
-        min_value=90,
-        max_value=360,
-        step=10,
-        new_value=matriz_parametros[index_radio][0] if matriz_parametros[index_radio][1] != 0 else 90
+        min_value=0,
+        max_value=9999,
+        step=1,
+        new_value=matriz_parametros[index_radio][1] if matriz_parametros[index_radio][1] != 0 else 0
     )
     mov_label_i.place(relx=0.4664, rely= 0.2180, anchor = "center")
     mov_tempo_i.place(relx=0.4664, rely = 0.3146, anchor = "center")
@@ -516,10 +516,10 @@ def configurar_canvas_movimentacao():
     mov_label_f = Label(canvas_movimentacao, text="Tempo Final", font=("Inter", fontsize14, "bold"), background="#E0E7EC", fg="#656565")
     mov_tempo_f = boxes.CustomSpinbox(
         canvas_movimentacao,
-        min_value=90,
-        max_value=360,
-        step=2,
-        new_value=matriz_parametros[index_radio][1] if matriz_parametros[index_radio][2] != 0 else 90
+        min_value=0,
+        max_value=9999,
+        step=1,
+        new_value=matriz_parametros[index_radio][2] if matriz_parametros[index_radio][2] != 0 else 0
     )
     mov_label_f.place(relx=0.4664, rely= 0.5551, anchor = "center")
     mov_tempo_f.place(relx=0.4664, rely = 0.6472, anchor = "center")
@@ -527,10 +527,10 @@ def configurar_canvas_movimentacao():
     mov_label_vel = Label(canvas_movimentacao, text="Velocidade", font=("Inter", fontsize14, "bold"), background="#E0E7EC", fg="#656565")
     mov_vel = boxes.CustomSpinbox(
         canvas_movimentacao,
-        min_value=90,
-        max_value=360,
-        step=5,
-        new_value=matriz_parametros[index_radio][2] if matriz_parametros[index_radio][3] != 0 else 90
+        min_value=1,
+        max_value=15,
+        step=1,
+        new_value=matriz_parametros[index_radio][3] if matriz_parametros[index_radio][3] != 0 else 1
     )
     mov_label_vel.place(relx=0.6682, rely = 0.38, anchor = "center")
     mov_vel.place(relx=0.6682, rely = 0.48, anchor = "center")
@@ -538,10 +538,10 @@ def configurar_canvas_movimentacao():
     mov_label_x = Label(canvas_movimentacao, text="Ângulo X", font=("Inter", fontsize14, "bold"), background="#E0E7EC", fg="#656565")
     mov_x = boxes.CustomSpinbox(
         canvas_movimentacao,
-        min_value=90,
-        max_value=360,
+        min_value=-25,
+        max_value=25,
         step=1,
-        new_value=matriz_parametros[index_radio][3] if matriz_parametros[index_radio][4] != 0 else 90
+        new_value=matriz_parametros[index_radio][4] if matriz_parametros[index_radio][4] != 0 else -25
     )
     mov_label_x.place(relx=0.87, rely= 0.2180, anchor = "center")
     mov_x.place(relx=0.87, rely = 0.3146, anchor = "center")
@@ -549,10 +549,10 @@ def configurar_canvas_movimentacao():
     mov_label_y = Label(canvas_movimentacao, text="Ângulo Y", font=("Inter", fontsize14, "bold"), background="#E0E7EC", fg="#656565")
     mov_y = boxes.CustomSpinbox(
         canvas_movimentacao,
-        min_value=90,
-        max_value=360,
+        min_value=-25,
+        max_value=25,
         step=1,
-        new_value=matriz_parametros[index_radio][4] if matriz_parametros[index_radio][5] != 0 else 90
+        new_value=matriz_parametros[index_radio][5] if matriz_parametros[index_radio][5] != 0 else -25
     )
     mov_label_y.place(relx=0.87, rely= 0.5551, anchor = "center")
     mov_y.place(relx=0.87, rely = 0.6472, anchor = "center")
@@ -609,55 +609,55 @@ def configurar_canvas_oscilacao():
     matriz_parametros[index_radio][0] = "O"
     osc_label_maxx = Label(canvas_oscilacao, text="Ângulo Max X", font=("Inter", fontsize14, "bold"), background="#E0E7EC", fg="#656565")
     osc_maxx = boxes.CustomSpinbox(canvas_oscilacao,
-        min_value=90,
-        max_value=360,
-        step=10,
-        new_value=matriz_parametros[index_radio][0] if matriz_parametros[index_radio][1] != 0 else 90)
+        min_value=-25,
+        max_value=25,
+        step=1,
+        new_value=matriz_parametros[index_radio][1] if matriz_parametros[index_radio][1] != 0 else -25)
     osc_label_maxx.place(relx=0.4664, rely= 0.2180, anchor = "center")
     osc_maxx.place(relx=0.4664, rely = 0.3146, anchor = "center")
 
     osc_label_minx = Label(canvas_oscilacao, text="Ângulo Min X", font=("Inter", fontsize14, "bold"), background="#E0E7EC", fg="#656565")
     osc_minx = boxes.CustomSpinbox(canvas_oscilacao,
-        min_value=90,
-        max_value=360,
-        step=2,
-        new_value=matriz_parametros[index_radio][1] if matriz_parametros[index_radio][2] != 0 else 90)
+        min_value=-25,
+        max_value=25,
+        step=1,
+        new_value=matriz_parametros[index_radio][2] if matriz_parametros[index_radio][2] != 0 else -25)
     osc_label_minx.place(relx=0.4664, rely= 0.5551, anchor = "center")
     osc_minx.place(relx=0.4664, rely = 0.6472, anchor = "center")
 
     osc_label_vel = Label(canvas_oscilacao, text="Velocidade", font=("Inter",fontsize14, "bold"), background="#E0E7EC", fg="#656565")
     osc_vel = boxes.CustomSpinbox(canvas_oscilacao,
-        min_value=90,
-        max_value=360,
-        step=2,
-        new_value=matriz_parametros[index_radio][2] if matriz_parametros[index_radio][3] != 0 else 90)
+        min_value=1,
+        max_value=15,
+        step=1,
+        new_value=matriz_parametros[index_radio][3] if matriz_parametros[index_radio][3] != 0 else 1)
     osc_label_vel.place(relx=0.6682, rely= 0.2180, anchor = "center")
     osc_vel.place(relx=0.6682, rely = 0.3146, anchor = "center")
 
     osc_label_rep = Label(canvas_oscilacao, text="Repetições", font=("Inter",fontsize14, "bold"), background="#E0E7EC", fg="#656565")
     osc_rep = boxes.CustomSpinbox(canvas_oscilacao,
-        min_value=90,
-        max_value=360,
-        step=2,
-        new_value=matriz_parametros[index_radio][3] if matriz_parametros[index_radio][4] != 0 else 90)
+        min_value=1,
+        max_value=9999,
+        step=1,
+        new_value=matriz_parametros[index_radio][4] if matriz_parametros[index_radio][4] != 0 else 1)
     osc_label_rep.place(relx=0.6682, rely= 0.5551, anchor = "center")
     osc_rep.place(relx=0.6682, rely = 0.6472, anchor = "center")
 
     osc_label_maxy = Label(canvas_oscilacao, text="Ângulo Max Y", font=("Inter", fontsize14, "bold"), background="#E0E7EC", fg="#656565")
     osc_maxy = boxes.CustomSpinbox(canvas_oscilacao,
-        min_value=90,
-        max_value=360,
-        step=2,
-        new_value=matriz_parametros[index_radio][4] if matriz_parametros[index_radio][5] != 0 else 90)
+        min_value=-25,
+        max_value=25,
+        step=1,
+        new_value=matriz_parametros[index_radio][5] if matriz_parametros[index_radio][5] != 0 else -25)
     osc_label_maxy.place(relx=0.87, rely= 0.2180, anchor = "center")
     osc_maxy.place(relx=0.87, rely = 0.3146, anchor = "center")
 
     osc_label_miny = Label(canvas_oscilacao, text="Ângulo Min Y", font=("Inter", fontsize14, "bold"), background="#E0E7EC", fg="#656565")
     osc_miny = boxes.CustomSpinbox(canvas_oscilacao,
-        min_value=90,
-        max_value=360,
-        step=2,
-        new_value=matriz_parametros[index_radio][5] if matriz_parametros[index_radio][6] != 0 else 90)
+        min_value=-25,
+        max_value=25,
+        step=1,
+        new_value=matriz_parametros[index_radio][6] if matriz_parametros[index_radio][6] != 0 else -25)
     osc_label_miny.place(relx=0.87, rely= 0.5551, anchor = "center")
     osc_miny.place(relx=0.87, rely = 0.6472, anchor = "center")
 
@@ -708,7 +708,7 @@ btn_presets.place(relx=0.1042, rely=0.8611)
 
 btn_iniciarCarregamento = Button(
     tela_parametros,
-    text="AVANÇAR",
+    text="COLETAR",
     font=("Inter", fontsize,"bold"),
     fg="#E0E0E0",
     image=bg_btn,
@@ -875,7 +875,7 @@ def LerArquivo():
 
 btn_avancarResultado = Button(
     tela_carregamento,
-    text="COLETAR\nRESULTADOS",
+    text="RESULTADOS",
     font=("Inter", fontsize,"bold"),
     fg="#E0E0E0",
     image=bg_btn,
