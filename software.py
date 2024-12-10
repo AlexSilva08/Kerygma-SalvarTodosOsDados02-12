@@ -709,9 +709,20 @@ btn_presets = Button(
 )
 btn_presets.place(relx=0.1042, rely=0.8611)
 
+
+def ManterColeta():
+
+    global PararColeta
+
+    show_frame(tela_carregamento)
+
+    root.after(10, ColetarDados)
+
+
 #MARK: COLETAR DADOS DO TEENSY
 
 def ColetarDados():
+    
     
     baud = 9600
 
@@ -802,7 +813,7 @@ def ColetarDados():
 
     print(str(Dados_CopX) + " " + str(Dados_CopY) + " " + str(Dados_Tempo))
 
-    show_frame(tela_carregamento)
+
 
 
 btn_iniciarCarregamento = Button(
@@ -816,7 +827,7 @@ btn_iniciarCarregamento = Button(
     compound="center",
     bd=0,
     activeforeground="#f7c360",
-    command=lambda: ColetarDados()
+    command=lambda: ManterColeta()
 )
 btn_iniciarCarregamento.place(relx=0.7969, rely=0.8611)
 
